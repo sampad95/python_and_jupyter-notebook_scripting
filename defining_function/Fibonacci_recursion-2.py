@@ -9,7 +9,7 @@ def rec_fib(x_n):
     return(rec_fib(x_n-1) + rec_fib(x_n-2))
 
 if n <= 0:
-  print("Invalid input ! Please input a positive value greater than one")
+  print("Invalid input ! Please input a positive value greater than or equal to one")
 else:
   print('Fibonacci series for n=',n,':')
   for i in range(n+1):
