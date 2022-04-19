@@ -3,8 +3,8 @@ with open('EIGENVAL','r') as fw:
 #    lines = fw.readlines()[0:5]  # reads five lines (0th to 4th)
 #    print(lines)                 # prints the five lines as list of strings, each line as a string
      
-    line0 = fw.readlines()[0]    # reads the 0th line counting starts from 0
-    print(line0)                 # prints the 0th line counting starts from 0
+    line0 = fw.readlines()[0]    # reads the 0th line, counting starts from 0
+    print(line0)                 # prints the 0th line, counting starts from 0
     sline0 = line0.split()       # splits the 0th line and store as the list of strings
     print(sline0)
 
@@ -16,8 +16,8 @@ with open('EIGENVAL','r') as fw:
     fw.seek(0)                   # moves read cursor to the start( 0th line) of the file
       
 
-    line5 = fw.readlines()[5]    # reads the 5th line counting starts from 0
-    print(line5)                 # prints the 5th line counting starts from 0
+    line5 = fw.readlines()[5]    # reads the 5th line, counting starts from 0
+    print(line5)                 # prints the 5th line, counting starts from 0
     sline5 = line5.split()       # splits the 5th line and store as the list of strings
     print(sline5)
 
