@@ -3,8 +3,8 @@ with open('EIGENVAL','r') as fw:
 #    lines = fw.readlines()[0:5]  # reads five lines (0th to 4th)
 #    print(lines)                 # prints the five lines as list of strings, each line as a string
 
-    line5 = fw.readlines()[5]    # reads the 5th line counting starts from 0
-    print(line5)                 # prints the 5th line counting starts from 0
+    line5 = fw.readlines()[5]    # reads the 5th line, counting starts from 0
+    print(line5)                 # prints the 5th line, counting starts from 0
     sline5 = line5.split()
     print(sline5)
 
