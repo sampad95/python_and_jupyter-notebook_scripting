@@ -5,7 +5,7 @@ with open('EIGENVAL','r') as fw:
 
     line5 = fw.readlines()[5]    # reads the 5th line, counting starts from 0
     print(line5)                 # prints the 5th line, counting starts from 0
-    sline5 = line5.split()
+    sline5 = line5.split()       # splits the 5th line and store as the list of strings
     print(sline5)
 
     nelect = int(sline5[0])      # 0th element of the list  # int() is another built-in function converts string to integer
