@@ -1,4 +1,7 @@
-r=range(0,20,3)
+start=eval(input('Enter the starting digit of the range\n'))
+stop=eval(input('Enter the end digit of the range\n'))
+step=eval(input('Enter the step of the range\n'))
+r=range(start,stop,step)
 print('range r=',r)
 print('number of elements in',r, '=',len(r))      # 'len' is another built-in function
 print('smallest element of the',r,'=',min(r))     # 'min' is another built-in function
