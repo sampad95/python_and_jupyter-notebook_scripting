@@ -19,7 +19,7 @@ print('tuple of', r, '=',tuple(r))                # 'tuple' is another built-in 
 #m=eval(input('Enter the index number for which you want the number in the list\n'))
 #print(m,'th element is',r[m])
 
-p,q=eval(input('Enter the index numbers with commas for slicing\n')) 
+p,q=eval(input('Enter the index numbers with comma for slicing\n')) 
 print('(',p,',',q,') sliced range is =',r[p:q])
 print('smallest element of the',r[p:q],'=',min(r[p:q]))
 print('largest element of the',r[p:q],'=',max(r[p:q]))
