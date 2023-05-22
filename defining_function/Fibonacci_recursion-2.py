@@ -12,5 +12,6 @@ if n <= 0:
   print("Invalid input ! Please input a positive value greater than or equal to one")
 else:
   print('Fibonacci series for n=',n,':')
-  for i in range(n+1):
-      print(rec_fib(i))
+#   for i in range(n+1):
+#       print(rec_fib(i))
+  print([rec_fib(i) for i in range (n+1)])
