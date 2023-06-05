@@ -1,10 +1,9 @@
 from math import *
-def sum(x,n):
-    sum=0
-    for j in r:
-        sum=sum+(((-1)**j)*(x**j)/factorial(j))
-    return sum
+def exp_(x,n):
+    sum1=0
+    for j in range(n+1:
+        sum1=sum1+(((-1)**j)*(x**j)/factorial(j))
+    return sum1
 x=eval(input('Enter the value of x\n'))
-n=eval(input('Enter the value of n\n'))
-r=range(0,n+1)
-print(sum(x,n))
+n=eval(input('Enter the value of n\n')
+print(exp_(x,n))
