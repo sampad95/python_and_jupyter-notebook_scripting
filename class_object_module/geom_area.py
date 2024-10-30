@@ -10,10 +10,11 @@ class area:
         return math.pi*self.radius**2
 
     def cylinder_area(self, height):
-        return (2*area(self.radius).circle_area())+2*math.pi*self.radius*height 
+        #return (2*area(self.radius).circle_area())+2*math.pi*self.radius*height
+        return (2*self.circle_area())+2*math.pi*self.radius*height 
 
     def sphere_area(self):
-        return (4/3)*math.pi*self.radius**3
+        return 4*math.pi*self.radius**2
 
 
 if __name__ == "__main__":
