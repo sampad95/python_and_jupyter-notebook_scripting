@@ -10,7 +10,7 @@ def psi_nx_ny(a2, b2, nx, ny, x, y):
     
     lx = a2 - 0
     ly = b2 - 0
-    if type(nx) == int and type(ny) == int and nx != 0 and ny != 0:
+    if type(nx) == int and type(ny) == int and nx > 0 and ny > 0:
         psi = math.sqrt(4/lx*ly)*math.sin((nx*math.pi*x)/lx)*math.sin((ny*math.pi*y)/ly)
         return psi
         
@@ -23,7 +23,7 @@ def pd_nx_ny(a2, b2, nx, ny, x, y):
     lx = a2 - 0
     ly = b2 - 0
     
-    if type(nx) == int and type(ny) == int and nx != 0 and ny != 0:
+    if type(nx) == int and type(ny) == int and nx > 0 and ny > 0:
         psi = math.sqrt(4/lx*ly)*math.sin((nx*math.pi*x)/lx)*math.sin((ny*math.pi*y)/ly)
         return psi**2
         
@@ -46,27 +46,31 @@ step = 0.01
 qnx = 2
 qny = 2
 
-# X,Y = np.meshgrid(xvec(xmax, step), yvec(ymax, step)) # grid of point
-# PSI = np.array([np.array([psi_nx_ny(xmax, ymax, qnx, qny, i, j) for i in  xvec(xmax, step)]) 
-#                 for j in yvec(ymax, step)]) 
-
-# fig = plt.figure()
-# ax = fig.add_subplot(projection = "3d")
-# surf = ax.plot_surface(X, Y, PSI, rstride=1, cstride=1, 
-#                       cmap=cm.hsv,linewidth=0, antialiased=False)
-
-
-
 X,Y = np.meshgrid(xvec(xmax, step), yvec(ymax, step)) # grid of point
-PD = np.array([np.array([pd_nx_ny(xmax, ymax, qnx, qny, i, j) for i in  xvec(xmax, step)]) 
-                for j in yvec(ymax, step)])
+PSI = np.array([np.array([psi_nx_ny(xmax, ymax, qnx, qny, i, j) for i in  xvec(xmax, step)]) 
+                for j in yvec(ymax, step)]) 
 
 fig = plt.figure()
 ax = fig.add_subplot(projection = "3d")
-surf = ax.plot_surface(X, Y, PD, rstride=1, cstride=1, 
+surf = ax.plot_surface(X, Y, PSI, rstride=1, cstride=1, 
                       cmap=cm.hsv,linewidth=0, antialiased=False)
 
 
+
+#X,Y = np.meshgrid(xvec(xmax, step), yvec(ymax, step)) # grid of point
+#PD = np.array([np.array([pd_nx_ny(xmax, ymax, qnx, qny, i, j) for i in  xvec(xmax, step)]) 
+#                for j in yvec(ymax, step)])
+#
+#fig = plt.figure()
+#ax = fig.add_subplot(projection = "3d")
+#surf = ax.plot_surface(X, Y, PD, rstride=1, cstride=1, 
+#                      cmap=cm.hsv,linewidth=0, antialiased=False)
+
+
+#scale_x = xmax
+#scale_y = ymax
+#scale_z = 1
+#ax.get_proj = lambda: np.dot(Axes3D.get_proj(ax), np.diag([scale_x, scale_y, scale_z, 1]))
 
 
 ax.zaxis.set_major_locator(LinearLocator(10))
