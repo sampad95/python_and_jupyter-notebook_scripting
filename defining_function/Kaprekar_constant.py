@@ -47,6 +47,8 @@ import random
                 
 #             print("Next n=", n)
 
+#     print("Stop")
+
 # else:
 #     print("Invalid")     
 
@@ -54,24 +56,40 @@ import random
 ######################################################################
 
 def Kaprekar_routine(n):
+    print("Initial n = ", n)
+    i = 0
     if len(str(n)) == 4:
         while(int(n)!=6174):
             min_n=int(''.join(sorted(str(n))))
-            max_n=int(''.join(sorted(str(n), reverse=True)))   
-            diff = max_n - min_n
+            max_n=int(''.join(sorted(str(n), reverse=True)))  
 
-            if len(str(diff)) == 4:
-                n = diff
-            elif len(str(diff)) == 3:
-                n = '0'+str(diff)
-            elif len(str(diff)) == 2:
-                n = '00'+str(diff)
+            if min_n == max_n:
+                print("Invalid")
+                break
             else:
-                n = '000'+str(diff)
+                diff = max_n - min_n
+                i +=1
 
-            print(n)
+                print("Step = ", i)
+                print(min_n, max_n, diff)
+
+
+                if len(str(diff)) == 4:
+                    n = diff
+                elif len(str(diff)) == 3:
+                    n = '0'+str(diff)
+                elif len(str(diff)) == 2:
+                    n = '00'+str(diff)
+                else:
+                    n = '000'+str(diff)
+
+            print("Next n = ", n)
+
+        print("Stop")
+
     else:
         print("Invalid")
 
 
-Kaprekar_routine(1000)
+num = random.randint(100, 10000)
+Kaprekar_routine(num)
